@@ -154,8 +154,12 @@
 	if(month == 1 && day == 20){
 		if(year > 2099) return;
 		var tonow = year - 2002;
+		console.log(tonow);
 		var gewei = parseInt(tonow % 10);
 		var shiwei = parseInt((tonow % 100) / 10);
+		
+		console.log(gewei);
+		console.log(shiwei);
 		
 		document.getElementById("gewei").textContent = gewei;
 		document.getElementById("shiwei").textContent = shiwei;
