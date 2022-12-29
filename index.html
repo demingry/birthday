@@ -7,7 +7,7 @@
 <head>
 	<title>Happy Birthday</title>
 	<meta charset="UTF-8" />
-	<meta name="description" content="Happy Birthday Xola">
+	<meta name="description" content="Happy Birthday">
 	<meta name="robots" content="index, follow" />
 	<link rel="author" href="https://plus.google.com/u/1/+AyushSharma1/" /> 
     <meta name="keywords" content="Birthday, Happy">
@@ -178,6 +178,16 @@
 		
 		parent.appendChild(p4);
 	}else{
+		
+		var age = jsGetAge("2002-01-20")
+		
+		var gewei = parseInt(age % 10);
+		var shiwei = parseInt((age % 100) / 10);
+		
+		document.getElementById("gewei").textContent = gewei;
+		document.getElementById("shiwei").textContent = shiwei;
+		
+		
 		var parent = document.getElementById("msg-parent");
 		
 		var p1 = document.createElement("p");
@@ -185,8 +195,7 @@
 		
 		
 		var p2 = document.createElement("p");
-		var age = year-2002+1;
-		p2.textContent = "你现在应该是" + jsGetAge("2002-01-20") +"岁了";
+		p2.textContent = "你现在应该是" + age +"岁了";
 		
 		
 		parent.insertBefore(p2, parent.childNodes[0]);
@@ -261,10 +270,10 @@
 		}
 	      }
 	    }else{
-	      returnAge = -1;//返回-1 表示出生日期输入错误 晚于今天
+	      returnAge = -1;
 	    }
 	  }
-	  return returnAge;//返回周岁年龄
+	  return returnAge;
 }
 </script>
 
