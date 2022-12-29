@@ -151,12 +151,8 @@
 	
 	if(month == 1 && day == 20){
 		var tonow = year - 2002;
-		console.log(tonow);
 		var gewei = parseInt(tonow % 10);
 		var shiwei = parseInt((tonow % 100) / 10);
-		
-		console.log(gewei);
-		console.log(shiwei);
 		
 		document.getElementById("gewei").textContent = gewei;
 		document.getElementById("shiwei").textContent = shiwei;
@@ -188,7 +184,8 @@
 		p1.textContent = "如果我没记错的话";
 		
 		var p2 = document.createElement("p");
-		p2.textContent = "你现在应该是" + (year-2022+1) +"岁了";
+		var age = year-2022+1;
+		p2.textContent = "你现在应该是" + age +"岁了";
 		
 		parent.insertBefore(p2, parent.childNodes[0]);
 		parent.insertBefore(p1, parent.childNodes[0]);
