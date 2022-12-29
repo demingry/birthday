@@ -103,9 +103,7 @@
 			</div>
 		</div>
 		<div class="row message">
-			<div class="col-md-12">
-				<p id="msg1">今天是你的农历生日</p>
-				<p id="msg2">是传统节日-腊八节</p>
+			<div class="col-md-12" id="msg-parent">
 				<p>很高兴认识你</p>
 				<p>这是我们的缘分</p>
 				<p>记得让自己少一些烦恼</p>
@@ -162,6 +160,33 @@
 		
 		document.getElementById("gewei").textContent = gewei;
 		document.getElementById("shiwei").textContent = shiwei;
+	}else if(year == 2022 && month == 12 && day == 29){
+		document.getElementById("gewei").textContent = 1;
+		document.getElementById("shiwei").textContent = 2;
+		
+		var parent = document.getElementById("msg-parent");
+		
+		var p1 = document.createElement("p");
+		p1.textContent = "今天是你的农历生日";
+		var p2 = document.createElement("p");
+		p2.textContent = "今年是我们相识的第一年";
+		var p3 = document.createElement("p");
+		p3.textContent = "我们在同一所学校，我们都将面临毕业"
+		
+		parent.insertBefore(p3, parent.childNodes[0])
+		parent.insertBefore(p2, parent.childNodes[0])
+		parent.insertBefore(p1, parent.childNodes[0])
+	}else{
+		var parent = document.getElementById("msg-parent");
+		
+		var p1 = document.createElement("p");
+		p1.textContent = "如果我没记错的话";
+		
+		var p2 = document.createElement("p");
+		p2.textContent = "你现在应该是" + (year-2022+1) +"岁了";
+		
+		parent.insertBefore(p2, parent.childNodes[0])
+		parent.insertBefore(p1, parent.childNodes[0])
 	}
 </script>
 
