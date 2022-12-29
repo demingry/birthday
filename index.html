@@ -42,10 +42,10 @@
     	<h2 style="color:#0719D4;">宁</h2>
     </div>
 	<div class="balloons text-center" id="b3">
-    	<h2 style="color:#D14D39;">2</h2>
+    	<h2 style="color:#D14D39;" id="shiwei">2</h2>
     </div>
 	<div class="balloons text-center" id="b4">
-    	<h2 style="color:#8FAD00;">1</h2>
+    	<h2 style="color:#8FAD00;" id="gewei">1</h2>
     </div>
 	<div class="balloons text-center" id="b5">
     	<h2 style="color:#8377E4;">岁</h2>
@@ -104,13 +104,13 @@
 		</div>
 		<div class="row message">
 			<div class="col-md-12">
-				<p>今天是你的农历生日</p>
-				<p>是传统节日-腊八节</p>
+				<p id="msg1">今天是你的农历生日</p>
+				<p id="msg2">是传统节日-腊八节</p>
 				<p>很高兴认识你</p>
 				<p>这是我们的缘分</p>
 				<p>记得让自己少一些烦恼</p>
 				<p>多一些快乐！</p>
-				<p>---瑞</p>
+				<p>--瑞</p>
 			</div>
 		</div>
 		<div class="navbar navbar-fixed-bottom">
@@ -145,5 +145,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="effect.js"></script>
+<script>
+	var date = new Date();
+	var year = date.getFullYear();
+	var month = date.getMonth();
+	var day = date.getDate();
+	
+	if(month == 1 && day == 20){
+		if(year > 2099) return;
+		var tonow = year - 2002 + 1;
+		var gewei = parseInt(tonow % 10);
+		var shiwei = parseInt((tonow % 100) / 10);
+		
+		document.getElementById("gewei").textContent = gewei;
+		document.getElementById("shiwei").textContent = shiwei;
+	}
+</script>
 
 </html>
