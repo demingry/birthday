@@ -160,7 +160,7 @@
 		
 		document.getElementById("gewei").textContent = gewei;
 		document.getElementById("shiwei").textContent = shiwei;
-	}else if(year == 2022 && month == 12 && day == 29){
+	}else if(year == 2022 && month == 12 && day == 30){
 		document.getElementById("gewei").textContent = 1;
 		document.getElementById("shiwei").textContent = 2;
 		
@@ -176,6 +176,11 @@
 		parent.insertBefore(p3, parent.childNodes[0])
 		parent.insertBefore(p2, parent.childNodes[0])
 		parent.insertBefore(p1, parent.childNodes[0])
+		
+		var p4 = document.createElement("p");
+		p4.textContent = "记得明年来这里看看哦 :)";
+		
+		parent.appendChild(p4);
 	}else{
 		var parent = document.getElementById("msg-parent");
 		
@@ -185,8 +190,13 @@
 		var p2 = document.createElement("p");
 		p2.textContent = "你现在应该是" + (year-2022+1) +"岁了";
 		
-		parent.insertBefore(p2, parent.childNodes[0])
-		parent.insertBefore(p1, parent.childNodes[0])
+		parent.insertBefore(p2, parent.childNodes[0]);
+		parent.insertBefore(p1, parent.childNodes[0]);
+		
+		var p3 = document.createElement("p");
+		p3.textContent = "别忘了下次生日来看看哦 :)";
+		
+		parent.appendChild(p4);
 	}
 </script>
 
